@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  ai-starter-kit:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - API_KEY=your-api-key-here
+    volumes:
+      - .:/usr/src/app
+    networks:
+      - ai-starter-kit-network
+
+networks:
+  ai-starter-kit-network:
+    driver: bridge
